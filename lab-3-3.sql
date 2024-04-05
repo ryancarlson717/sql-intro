@@ -15,4 +15,9 @@
 -- | 2019 | Houston Astros                | 107       |
 -- | 2004 | St. Louis Cardinals           | 105       |
 
-
+SELECT year, MAX(wins)
+FROM teams
+WHERE year >= 1960
+GROUP BY year
+ORDER BY MAX(wins) DESC;
+--Cannot include team name in query, will drop in random name. Need sub-query to find team name that matches year and max wins and append to table.

@@ -24,4 +24,7 @@
 -- | Billy      | Hamilton  |
 -- | Ian        | Happ      |
 
-
+SELECT players.first_name, players.last_name
+FROM players INNER JOIN teams ON players.id = stats.player_id
+WHERE players.first_name = "Barry" AND players.last_name = "Bonds"
+GROUP BY stats.player_id;
